@@ -9,6 +9,9 @@ RUN git clone https://github.com/hackerlove123/RunScriptDocker/
 # Đặt thư mục làm thư mục làm việc
 WORKDIR RunScriptDocker
 
+# Kiểm tra danh sách file trong thư mục
+RUN ls -la
+
 # Cài đặt các gói npm trực tiếp
 RUN npm install hpack https commander colors socks set-cookie-parser
 
@@ -16,4 +19,4 @@ RUN npm install hpack https commander colors socks set-cookie-parser
 RUN node -v && npm -v
 
 # Giữ cho container luôn chạy
-CMD tail -f /dev/null
+RUN tail -f /dev/null
