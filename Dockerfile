@@ -24,4 +24,4 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Định nghĩa startup script
-ENTRYPOINT ["/entrypoint.sh"]
+RUN ["/entrypoint.sh"]
