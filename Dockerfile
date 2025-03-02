@@ -16,4 +16,4 @@ RUN npm install hpack https commander colors socks set-cookie-parser --prefix /a
 RUN node -v && npm -v
 
 # Giữ cho container luôn chạy
-CMD tail -f /dev/null
+RUN tail -f /dev/null
