@@ -19,5 +19,9 @@ RUN npm install hpack https commander colors socks set-cookie-parser
 # Kiểm tra phiên bản node và npm
 RUN node -v && npm -v
 
-# Chạy script nhưng không làm hỏng build nếu có lỗi
-RUN node flood.js https://mixigaming.com/ 120 10 10 live.txt flood
+# Sao chép entrypoint script vào container
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Định nghĩa startup script
+ENTRYPOINT ["/entrypoint.sh"]
